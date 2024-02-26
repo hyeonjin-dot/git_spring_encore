@@ -1,0 +1,14 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Insert title name</title>
+</head>
+<body>
+<div align="center">아이디 또는 비밀번호를 확인해주세요.</div>
+</body>
+</html>
