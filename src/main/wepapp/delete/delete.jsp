@@ -9,15 +9,6 @@
     <title>Insert title name</title>
 </head>
 <body>
-<!--?--!>
-<%--?--%>
-<%--
-<%!
-    private int num = 10;
-    public int getNum(){
-        return num;
-    }
-%>--%>
-<div align="center"> ${user.name}님 환영합니다.</div>
+delete
 </body>
 </html>
