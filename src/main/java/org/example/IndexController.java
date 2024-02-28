@@ -1,14 +1,13 @@
 package org.example;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
+import mvc.service.utill.MvcService;
+import mvc.user.ctrl.util.Controller;
+import mvc.util.view.View;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-@WebServlet("/index.encore")
+/*@WebServlet("/index.encore")
 public class IndexController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,5 +19,27 @@ public class IndexController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    }
+
+
+}*/
+
+public class IndexController implements Controller{
+
+    private  MvcService service;
+
+    public IndexController() {
+    }
+    public IndexController(MvcService service) {
+        this.service = service;
+    }
+
+    @Override
+    public View execute(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("index controller execute");
+        View view = new View();
+        view.setFlag(true);
+        view.setResponseJsp("./main.jsp");
+        return view;
     }
 }

@@ -26,7 +26,7 @@ public class DispatcherController extends HttpServlet {
         System.out.println("client request path : " + request.getRequestURL());
         BeanFactory factory = BeanFactory.getInstance();
         Controller ctrl = factory.getCtrl(request.getRequestURI());
-        View view = ctrl.execute();
+        View view = ctrl.execute(request, response);
         if (view.isFlag()){
             RequestDispatcher rd = request.getRequestDispatcher(view.getResponseJsp());
             rd.forward(request, response); // 주소값 *.hanwha 그대로
