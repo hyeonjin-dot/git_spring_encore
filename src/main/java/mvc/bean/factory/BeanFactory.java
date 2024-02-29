@@ -33,7 +33,8 @@ public class BeanFactory {
         map.put("/update.hanwha", new UpdateCtrl(service));
         map.put("/delete.hanwha", new DeleteCtrl(service));
         //새로운 업무모듈
-        map.put("/select.hanwha", new SelectCtrl(service));
+        map.put("/select/select.hanwha", new SelectCtrl(service));
+        map.put("/logout.hanwha", new LogoutCtrl());
     }
 
     public static BeanFactory getInstance(){

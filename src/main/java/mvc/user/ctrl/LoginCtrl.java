@@ -8,6 +8,7 @@ import mvc.util.view.View;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 //controller 역할
 // 1. 파라미터가 있으면 값을 전달받고 이걸 DTO 바인딩한다.
@@ -38,9 +39,12 @@ public class LoginCtrl implements Controller {
         View view = new View();
 
         if (user != null){
-            request.setAttribute("user", user);
+            //request.setAttribute("user", user);
+            HttpSession session = request.getSession(); // session 생성 : 데이터를 보관할 수 있는 공간
+            session.setAttribute("user", user);
+
             view.setFlag(true);
-            view.setResponseJsp("./ok.jsp");
+            view.setResponseJsp("./main.jsp");
             return view;
         }else{
             view.setFlag(true) ;

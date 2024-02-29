@@ -22,12 +22,16 @@ public class SelectCtrl implements Controller {
 
         System.out.println("select Ctrl");
         List<ResponseUserDto> list = service.select();
-        for (ResponseUserDto dto : list){
+        for (ResponseUserDto dto : list) {
             System.out.println(dto.toString());
         }
+
+        //데이터 심기
+         request.setAttribute("list", list);
+
         View view = new View();
         view.setFlag(true) ;
-        view.setResponseJsp("./index.jsp"); //임의로
+        view.setResponseJsp("../list/list.jsp"); //임의로
         return view;
     }
 }
